@@ -1,0 +1,17 @@
+{
+  "repo": "ember-plat-rollout-mesh",
+  "thresholds": {
+    "signal": 2,
+    "slack": 1,
+    "confidence": 1,
+    "drag": 3,
+    "ship": 197,
+    "watch": 95
+  },
+  "terms": [
+    "rollout width",
+    "quota pressure",
+    "route drift",
+    "secret scope"
+  ]
+}
