@@ -1,0 +1,73 @@
+{
+  "repo": "ember-plat-rollout-mesh",
+  "language": "Java",
+  "category": "Platform engineering",
+  "goal": "Package a Java local lab for rollout analysis with deny and allow fixtures, explainable decision traces, and documented operating limits.",
+  "review_model": {
+    "terms": [
+      "rollout width",
+      "quota pressure",
+      "route drift",
+      "secret scope"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "rollout width",
+      "signal": 79,
+      "slack": 21,
+      "drag": 12,
+      "confidence": 87,
+      "score": 230,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "quota pressure",
+      "signal": 78,
+      "slack": 46,
+      "drag": 18,
+      "confidence": 93,
+      "score": 241,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "route drift",
+      "signal": 55,
+      "slack": 34,
+      "drag": 32,
+      "confidence": 94,
+      "score": 142,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "secret scope",
+      "signal": 55,
+      "slack": 36,
+      "drag": 14,
+      "confidence": 94,
+      "score": 198,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "rollout width",
+      "signal": 83,
+      "slack": 29,
+      "drag": 25,
+      "confidence": 57,
+      "score": 177,
+      "lane": "ship"
+    }
+  ]
+}
