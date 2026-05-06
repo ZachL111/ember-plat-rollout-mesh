@@ -1,0 +1,32 @@
+{
+  "index": 517,
+  "phase": 2,
+  "batch": 58,
+  "name": "ember-plat-rollout-mesh",
+  "planned_name": "ember-plat-rollout-mesh",
+  "language": "Java",
+  "category": "Platform engineering",
+  "goal": "Package a Java local lab for rollout analysis with deny and allow fixtures, explainable decision traces, and documented operating limits.",
+  "repository_url": "https://github.com/ZachL111/ember-plat-rollout-mesh",
+  "verification_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify.ps1",
+  "model": {
+    "inputs": [
+      "demand",
+      "capacity",
+      "latency",
+      "risk",
+      "weight"
+    ],
+    "threshold": 151,
+    "risk_penalty": 5,
+    "latency_penalty": 3,
+    "weight_bonus": 5,
+    "decision_rule": "accept when score is greater than or equal to threshold, otherwise review"
+  },
+  "quality_gates": [
+    "readme constraint scan",
+    "fixture presence check",
+    "metadata JSON parse",
+    "language verifier"
+  ]
+}
